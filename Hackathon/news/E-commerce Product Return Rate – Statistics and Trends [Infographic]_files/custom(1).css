@@ -1,0 +1,45 @@
+/*
+	Styling Lists with CSS and WordPress Shortcode
+	http://www.internoetics.com/2011/01/21/styling-lists-with-css/
+*/
+
+
+.internoeticscross ul {
+margin-left:50px;
+list-style:none!important
+}
+.internoeticscross ul li{
+list-style-type: none;
+padding:5px 5px 5px 30px;
+background: #fff url("http://www.internoetics.com/images/0963/cross.png") no-repeat center left;
+}
+
+.internoeticstick ul {
+margin-left:50px;
+list-style:none!important
+}
+.internoeticstick ul li{
+list-style-type: none;
+padding:5px 5px 5px 30px;
+background: #fff url("http://www.internoetics.com/images/0963/tick.png") no-repeat center left;
+}
+
+.internoeticsinternoetics ul {
+margin-left:50px;
+list-style:none!important
+}
+.internoeticsinternoetics ul li{
+list-style-type: none;
+padding:5px 5px 5px 30px;
+background: #fff url("http://www.internoetics.com/images/0963/info.png") no-repeat center left;
+}
+
+.internoeticspenis ul {
+margin-left:50px;
+list-style:none!important
+}
+.internoeticspenis ul li{
+list-style-type: none;
+padding:5px 5px 5px 30px;
+background: #fff url("http://www.internoetics.com/images/0963/penis.png") no-repeat center left;
+}

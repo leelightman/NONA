@@ -1,0 +1,91 @@
+window.cmpConfig = {
+	summon: "https://usadmm.dotomi.com/gdpr/check/json/current",
+	brandingImg: "https://images.fastcompany.net/image/upload/v1527608729/fcweb/fastcompany-250-50_aadlwn.png",
+	redirectURL: "/favicon.ico",
+	siteId: "p-fastcompany.com",
+	vendors: [
+		12,
+		162,
+		95,
+		28,
+		25,
+		104,
+		24,
+		11,
+		13,
+		32,
+		10,
+		45,
+		52,
+		35,
+		71,
+		79,
+		125,
+		203,
+		165,
+		91,
+		69,
+		64,
+		148,
+		264,
+		278,
+		183,
+		315,
+		203,
+		78,
+		130,
+		62,
+		36,
+		80,
+		81,
+		61,
+		76,
+		89,
+		50,
+		21,
+		42,
+		77,
+		120,
+		132,
+		102,
+		68,
+		97,
+		56,
+		103,
+		144,
+		114,
+		126,
+		163,
+		128,
+		129,
+		373,
+		385
+	],
+	lang: "EN",
+	nagDays: 5,
+	localVendors: {
+		version: "1.0.0",
+		vendors: {
+			"1": {
+				isSite: true,
+				name: "Fast Company",
+				purposeIds: [1, 2, 3, 4 , 5],
+				urls: {
+					policyUrl: "https://www.fastcompany.com/privacy-policy",
+					cookiesPolicy: "https://www.fastcompany.com/privacy-policy",
+					audit: "https://usadmm.dotomi.com/gdpr/audit/current"
+				},
+				consentCookieName: "euconsent_site"
+			},
+			"2": {
+				name: "SalesForce DMP",
+				purposeIds: [1, 2, 3, 4 , 5],
+				urls: {
+					policyUrl: "https://www.salesforce.com/company/privacy/full_privacy/",
+					cookiesPolicy: "https://www.salesforce.com/company/privacy/full_privacy/",
+					audit: "https://usadmm.dotomi.com/gdpr/audit/current"
+				}
+			}
+		}
+	}
+};

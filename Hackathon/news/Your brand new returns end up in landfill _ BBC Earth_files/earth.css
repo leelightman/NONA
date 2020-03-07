@@ -1,0 +1,498 @@
+/*
+	README:
+	To add a new region style override, complete the following:
+	1. copy this file and rename it using the region name (slug)
+	2. Make sure it's included in the Grunt task 'sass.js' file so it compiles
+
+	Earth Defaults:
+	Gradient green: #007f3e
+	Gradient mid (84%): #0095c7
+	Gradient blue: #02bfff
+
+*/
+/*
+	DEFINE VARIABLES
+*/
+@font-face {
+  font-family: 'Kamerik';
+  src: url("../../../fonts/bbc-earth/kamerik_105_romanian_book-webfont.eot");
+  src: url("../../../fonts/bbc-earth/kamerik_105_romanian_book-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/bbc-earth/kamerik_105_romanian_book-webfont.woff2") format("woff2"), url("../../../fonts/bbc-earth/kamerik_105_romanian_book-webfont.woff") format("woff"), url("../../../fonts/bbc-earth/kamerik_105_romanian_book-webfont.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Kamerik';
+  src: url("../../../fonts/bbc-earth/kamerik_105_romanian_bold-webfont.eot");
+  src: url("../../../fonts/bbc-earth/kamerik_105_romanian_bold-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/bbc-earth/kamerik_105_romanian_bold-webfont.woff2") format("woff2"), url("../../../fonts/bbc-earth/kamerik_105_romanian_bold-webfont.woff") format("woff"), url("../../../fonts/bbc-earth/kamerik_105_romanian_bold-webfont.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal; }
+
+body {
+  font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif;
+  /*
+		PAGE STRIPES
+	*/
+  /*
+		HEADER STYLES
+	*/
+  /*
+		FOOTER STYLES
+	*/
+  /*
+		GLOBAL STYLING
+	*/
+  /*
+		COMPONENTS
+	*/ }
+  body a {
+    color: #02bfff; }
+    body a:hover {
+      color: #007f3e; }
+  body .grid-item.promotional--Yes {
+    border: 5px solid #02bfff; }
+  body .btn,
+  body .copy,
+  body .copy h2,
+  body article.component-programme-theme.layout-tx h1,
+  body .container-facts .component-facts h1,
+  body .container-facts .fact p,
+  body .component-aus-tile .info h1,
+  body .component-aus-tile .info h2,
+  body .aus-about-footer hgroup a.more-info {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body .aus-about-footer hgroup a.more-info {
+    background: #fff;
+    color: #4a4a4a;
+    font-family: Kamerik;
+    font-size: 1.4em;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.29;
+    letter-spacing: 1px;
+    padding: .8em 1em;
+    display: inline-block;
+    border-radius: 0;
+    text-transform: none; }
+  body#programme-index section.mid {
+    min-height: 85vh; }
+  body.search-results section.content div.left {
+    max-width: 64em; }
+  body header.global div.nav-left > ul > li > a:hover {
+    color: #fff; }
+  body .remodal.iframe {
+    max-width: 780px;
+    padding: 0; }
+    body .remodal.iframe iframe.full {
+      width: 760px;
+      height: 568px;
+      border: none;
+      max-width: 100%; }
+      @media screen and (max-width: 790px) {
+        body .remodal.iframe iframe.full {
+          height: 721px; } }
+  body .blog-layout .follow-holder a.follow-btn {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif;
+    background-color: #0095c9; }
+    body .blog-layout .follow-holder a.follow-btn:hover {
+      background-color: #009182; }
+  body article.component-tile.mode-video .info h1 {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body .share-holder {
+    display: inline-block;
+    position: relative; }
+    body .share-holder a.earth-share-btn {
+      font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif;
+      background-color: #0095c9;
+      font-size: 1.6em;
+      color: #fff;
+      text-transform: lowercase; }
+      @media screen and (max-width: 800px) {
+        body .share-holder a.earth-share-btn {
+          font-size: 16px; } }
+      body .share-holder a.earth-share-btn:hover {
+        background-color: #009182; }
+      body .share-holder a.earth-share-btn:before {
+        color: #fff;
+        top: 0;
+        left: -0.7em;
+        font-size: em(14px, 16px); }
+    body .share-holder a.share-btn {
+      font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif;
+      background-color: #0095c9;
+      font-size: 1.6em;
+      color: #fff;
+      text-transform: lowercase; }
+      body .share-holder a.share-btn:hover {
+        background-color: #009182; }
+      body .share-holder a.share-btn:before {
+        color: #fff;
+        top: 0;
+        left: -0.7em;
+        font-size: em(14px, 16px); }
+  body .follow-holder {
+    display: inline-block; }
+    body .follow-holder a.follow-btn {
+      font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif;
+      background-color: #0095c9;
+      font-size: 1.6em;
+      color: #fff;
+      text-transform: lowercase; }
+      body .follow-holder a.follow-btn:before {
+        color: #fff;
+        top: 0;
+        left: -0.7em;
+        font-size: em(14px, 16px); }
+  body .blog-layout .tag-list h2,
+  body .customSelectInner,
+  body .tag-list ul li a,
+  body article.component-tile.mode-quote .info .copy cite,
+  body article.teaser a .date,
+  body header.channel-box-v2 .top-bar .links a,
+  body nav.modes span,
+  body section.component-extras article h2,
+  body section.component-image-gallery figure figcaption,
+  body section.component-profile article h1 {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body .blog-layout .button {
+    background-color: #009182; }
+  body footer.global:before,
+  body header.global:before {
+    background-color: #007f3e;
+    background: -webkit-linear-gradient(left, #007f3e 0%, #0095c7 84%, #02bfff 100%);
+    background: linear-gradient(to right, #007f3e 0%, #0095c7 84%, #02bfff 100%); }
+  body.layout-home-block header.global div.nav-search {
+    width: 2.2% !important; }
+  body.layout-home-block header.global.fixed div.nav-right > ul > li:nth-child(2) a {
+    padding-bottom: 1.3em; }
+  body.layout-home-block header.global.fixed div.nav-search {
+    height: 42px; }
+  body.layout-home-block .mpu-section {
+    margin-bottom: 4.8rem; }
+  body.layout-home-block .component-block article.in-component-mpu .wrap .dfp-mpu:after {
+    background: none;
+    color: rgba(0, 0, 0, 0.8); }
+  body header.global {
+    background: #4a4a4a; }
+    body header.global div.nav-left > ul > li > a span {
+      font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+    body header.global div.nav-left > ul > li:hover {
+      background: #646464; }
+    body header.global div.nav-right > ul > li > a {
+      font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+    body header.global div.nav-search {
+      width: 2.2% !important; }
+      body header.global div.nav-search a {
+        line-height: 4.5em; }
+    .no-js body header.global div.nav-search:hover a,
+    body header.global div.nav-right > ul > li:hover > a,
+    body header.global div.nav-search a:hover,
+    body header.global div.nav-search.active a,
+    body header.global li.dropdown li:hover a,
+    body header.global li.dropdown li.link:hover a,
+    body header.global li.programme li.last.view-all:hover,
+    body header.global li.todays-highlights > a {
+      color: #02bfff; }
+    body header.global div.nav-search > .container form button:hover {
+      background: #02bfff; }
+    body header.global div.nav-right > ul > li.nav-item-path > a,
+    body header.global div.nav-right > ul > li:hover > a {
+      color: #02bfff; }
+    .lteie9 body header.global ul {
+      float: right;
+      margin-right: 60px; }
+  body .content.content.content.content header {
+    background-image: linear-gradient(to right, #007f3e 0%, #0095c7 84%, #02bfff 100%); }
+    body .content.content.content.content header div.container h1 {
+      color: white;
+      font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body div.filterable > header {
+    background-image: linear-gradient(to right, #007f3e 0%, #0095c7 84%, #02bfff 100%); }
+    body div.filterable > header .hgroup h1,
+    body div.filterable > header .hgroup h4 {
+      font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body footer.global a:hover {
+    color: #02bfff !important; }
+  body footer.global .container > .col.col-nav {
+    width: 52%; }
+    @media screen and (max-width: 980px) {
+      body footer.global .container > .col.col-nav {
+        width: 40%; } }
+    @media screen and (max-width: 600px) {
+      body footer.global .container > .col.col-nav {
+        width: 20%; } }
+  body footer.global .terms > span {
+    display: inline; }
+    body footer.global .terms > span.links {
+      border-left: 1px solid #888;
+      margin-left: 5px;
+      padding-left: 5px; }
+  body article.billboard header .copy p {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body article.billboard header nav a {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body article.billboard header h1 {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif;
+    font-weight: 700;
+    font-size: 5.8em;
+    line-height: 0.9em;
+    text-transform: initial;
+    margin-bottom: 10px; }
+    body article.billboard header h1 img {
+      max-height: 4em;
+      max-width: 8em; }
+    @media screen and (max-width: 700px) {
+      body article.billboard header h1 {
+        font-size: 4em; } }
+  body .component > h1,
+  body .component > header > h1 {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body .component-block article .info h1,
+  body h2 {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body .component-hero.img-loaded .gallery-mode .info h3 {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body article.component-video-carousel .info span.subtitle,
+  body article.component-video-carousel .info span.title {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body article.billboard header h2 span.sub-heading {
+    font-weight: 800; }
+  body article.component-carousel-single nav > a {
+    color: #02bfff; }
+    body article.component-carousel-single nav > a:hover {
+      color: #17141f; }
+  body article.component-programme-theme.layout-about div.inner h1,
+  body article.component-programme-theme.layout-about div.inner h2,
+  body article.component-programme-theme.layout-about div.inner p {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body .video-video h1 {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body .body-content p {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body .related-stories.related-stories.related-stories.related-stories .promo-unit-title {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body section.component-extras article h1 {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body article.component-carousel-single figure a figcaption,
+  body article.component-carousel-single figure a strong {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body article.component-carousel-single nav > a {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body div.video-nav h4,
+  body div.video-nav span {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body .layout-contact section.content div.left .copy p:first-of-type {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body .copy.copy.copy.copy p:first-of-type {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body .form.form.form.form {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+    body .form.form.form.form button,
+    body .form.form.form.form input,
+    body .form.form.form.form label,
+    body .form.form.form.form textarea,
+    body .form.form.form.form ul > li {
+      font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body div.programme-index header {
+    /* TODO: GLOBAL */ }
+    body div.programme-index header .hgroup {
+      width: 40%; }
+      body div.programme-index header .hgroup h1 {
+        margin: 0;
+        padding-top: 40px; }
+    body div.programme-index header .filters div.modes a.active {
+      color: #02bfff; }
+    body div.programme-index header .filters .channels,
+    body div.programme-index header h4 {
+      display: none; }
+  body div.programme-index a.paginate,
+  body div.programme-index .btn.btn-paginate {
+    background-color: #4a4a4a; }
+    body div.programme-index a.paginate:before,
+    body div.programme-index .btn.btn-paginate:before {
+      color: #02bfff;
+      top: 2px;
+      /* TODO: GLOBAL */ }
+    body div.programme-index a.paginate:hover,
+    body div.programme-index .btn.btn-paginate:hover {
+      background: #02bfff; }
+  body article.component-video-carousel .item:hover .info:before {
+    color: #02bfff; }
+  .no-touchevents body section.component-image-gallery .overlay nav a.close:hover:after {
+    color: #02bfff; }
+  body .search-results ul.results li a h3 {
+    color: #02bfff; }
+  body .copy a,
+  body .form a {
+    color: #02bfff; }
+    body .copy a:hover,
+    body .form a:hover {
+      color: #222222; }
+  body .billboard-tile .billboard .copy p {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body .form .field button:hover {
+    background-color: #02bfff;
+    color: white; }
+  body .remodal h1,
+  body .remodal h2,
+  body .remodal p,
+  body .remodal ul > li {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body .remodal section h2 {
+    font-size: 1.2em; }
+  body .remodal section a.share-btn:before {
+    color: white; }
+  body .remodal section a.share-btn:hover {
+    background: #02bfff; }
+    body .remodal section a.share-btn:hover:before {
+      color: white; }
+  body .remodal section .schedule .item a {
+    color: #02bfff; }
+  body .remodal section .schedule nav .btn {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif;
+    background-color: #0095c9;
+    font-size: 1.6em;
+    color: #fff;
+    text-transform: lowercase; }
+    body .remodal section .schedule nav .btn span:before {
+      color: white; }
+    body .remodal section .schedule nav .btn:hover {
+      background: #02bfff; }
+      body .remodal section .schedule nav .btn:hover span:before {
+        color: white; }
+  body .remodal section div.video.box .player:hover span.play:before {
+    color: #02bfff; }
+  body .remodal .remodal-close:hover:after {
+    color: #02bfff; }
+  body .remodal .share-holder {
+    position: absolute; }
+  body .btn.btn-black.icon:hover {
+    background: #02bfff; }
+    body .btn.btn-black.icon:hover:before {
+      color: white; }
+  body nav.paging {
+    float: none;
+    text-align: center; }
+    body nav.paging a {
+      font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif;
+      font-size: 14px; }
+  body .layout-show-opv section.competition-opv .container .light section.form-builder .success,
+  body .layout-brightcove-opv section.competition-opv .container .light section.form-builder .success {
+    padding-top: 65px; }
+  body section.form-builder form > .form .controls button {
+    background: #007f3e; }
+  body div.video.box .player {
+    overflow: hidden; }
+    body div.video.box .player span.play {
+      background: #009182;
+      color: white; }
+      body div.video.box .player span.play.title {
+        background: rgba(0, 0, 0, 0.63);
+        color: white; }
+        body div.video.box .player span.play.title::before {
+          font-size: 50px; }
+          @media (max-width: 1150px) {
+            body div.video.box .player span.play.title::before {
+              font-size: 45px; } }
+          @media (max-width: 810px) {
+            body div.video.box .player span.play.title::before {
+              font-size: 40px; } }
+          @media (max-width: 768px) {
+            body div.video.box .player span.play.title::before {
+              font-size: 35px; } }
+          @media (max-width: 50px) {
+            body div.video.box .player span.play.title::before {
+              font-size: 30px; } }
+    body div.video.box .player:hover span.play {
+      background: #e6e9ec;
+      color: #009182; }
+  body.blog.layout-earth-blog #at-image-sharing-tool {
+    display: none !important; }
+  body.layout-earth-blog .earth-blog-search-bar.earth-blog-search-bar form::before {
+    background-color: #0095c9; }
+  body.layout-earth-blog .earth-blog-search-bar.earth-blog-search-bar form input[type="text"] {
+    padding: 0.86em; }
+  body.layout-earth-blog .blog-layout > footer a span.title span {
+    color: #03b5f5; }
+  body .blog-layout.detail > div.main div.left.left-back-to-blog > a:hover {
+    background-color: #0095c9; }
+  body .blog-layout article.teaser:hover:before {
+    background: #0095c9; }
+  body .blog-layout .tag-list ul li a.active,
+  body .blog-layout .tag-list ul li a:hover {
+    border-left: 3px solid #0095c9;
+    color: #0095c9; }
+  body.layout-earth-programme article.component-tile.mode-video .info h1 {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body .remodal section .hgroup h1 {
+    font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif; }
+  body .sf-newsletter-component form span.message {
+    color: #009182; }
+  body .sf-newsletter-component form div.field.error input {
+    border-bottom-color: #009182; }
+  body .sf-newsletter-component form input:focus:invalid {
+    border-bottom-color: #009182; }
+  body .sf-newsletter-component form button {
+    background-color: #009182; }
+    body .sf-newsletter-component form button:hover {
+      background-color: #0095c7; }
+  @media screen and (min-width: 800px) {
+    body .blog-layout > div.main div.left .tag-list ul li a.active,
+    body .blog-layout > div.main div.left .tag-list ul li a:hover {
+      border-right: 3px solid #0095c9; } }
+  @media screen and (min-width: 800px) {
+    body .blog-layout > div.main div.left .tag-list ul li a:hover,
+    body .blog-layout > div.main div.left .tag-list ul li a.active {
+      border-right: 3px solid #0095c9; } }
+
+.item-list .item a figcaption,
+.item-list .item a strong {
+  font-family: "Kamerik", BBCReithSans, "Gill Sans MT", "Gill Sans", sans-serif !important; }
+
+@media only screen and (max-width: 600px) {
+  body.region-earth header.global nav div.nav-left > ul > li > .container > ul > li:hover,
+  body.region-earth header.global nav div.nav-right > ul > li > .container > ul > li:hover,
+  body.region-earth header.global.fixed nav div.nav-left > ul > li > .container > ul > li:hover,
+  body.region-earth header.global.fixed nav div.nav-right > ul > li > .container > ul > li:hover {
+    background-color: #02bfff;
+    color: white; }
+    body.region-earth header.global nav div.nav-left > ul > li > .container > ul > li:hover a,
+    body.region-earth header.global nav div.nav-right > ul > li > .container > ul > li:hover a,
+    body.region-earth header.global.fixed nav div.nav-left > ul > li > .container > ul > li:hover a,
+    body.region-earth header.global.fixed nav div.nav-right > ul > li > .container > ul > li:hover a {
+      color: white; } }
+
+.at-image-sharing-mobile-icon {
+  display: none; }
+
+@media screen and (max-width: 520px) {
+  .remodal section .hgroup h2 {
+    font-size: 1.2em; } }
+
+.component-video-playlist .playlist article .copy h3 {
+  font-weight: 700; }
+
+.component-video-playlist .player-holder .responsive-frame .video h1 {
+  font-size: 4em;
+  max-width: 18em; }
+
+.cta-component.has-bg:not(.newsletter) h1 {
+  line-height: 1.3em; }
+
+.cta-component.newsletter .icon-holder:after {
+  border: 2px solid #009182; }
+
+.cta-component.newsletter .icon-holder {
+  background-image: url(../../../images/icons/ico-signup-earth.svg); }
+
+.remodal-overlay {
+  background: rgba(16, 24, 32, 0.9); }
+
+.remodal {
+  border: 0; }
+
+.remodal-close {
+  top: 0;
+  right: 0; }
+
+/*# sourceMappingURL=earth.css.map */

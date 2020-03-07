@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'helvetica_bqlight';
+    src: url('helveticabq-light-webfont.eot');
+    src: url('helveticabq-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('helveticabq-light-webfont.woff2') format('woff2'),
+         url('helveticabq-light-webfont.woff') format('woff'),
+         url('helveticabq-light-webfont.ttf') format('truetype'),
+         url('helveticabq-light-webfont.svg#helvetica_bqregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'helvetica_bqregular';
+    src: url('helveticabq-medium-webfont.eot');
+    src: url('helveticabq-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('helveticabq-medium-webfont.woff2') format('woff2'),
+         url('helveticabq-medium-webfont.woff') format('woff'),
+         url('helveticabq-medium-webfont.ttf') format('truetype'),
+         url('helveticabq-medium-webfont.svg#helvetica_bqregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

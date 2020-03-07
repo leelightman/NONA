@@ -1,0 +1,52 @@
+var dianomiContextHost="www.dianomi.com";function dianomiLoadContext(context_id,context_element,data){var lazyLoadInstance;var seed=Date.now();function downloadAndInstantiateLazyload(){var bodyEl=document.getElementsByTagName("body")[0];var lazyloadScript=document.createElement("script");lazyloadScript.async=true;lazyloadScript.src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.20.1/lazyload.iife.min.js";window.lazyLoadOptions={elements_selector:".lazy"};window.addEventListener("LazyLoad::Initialized",function(e){lazyLoadInstance=e.detail.instance;},false);bodyEl.appendChild(lazyloadScript);}
+function is_when_valid(unit,property_name,value){if(unit.hasOwnProperty("when")&&unit["when"].hasOwnProperty(property_name)){var property=unit["when"][property_name];var found=false;for(var j=0;j<property.length;j++){if(property[j]===value){return true;}}
+return false;}
+return true;}
+var viewportWidth;var setViewportWidth=function(){viewportWidth=window.innerWidth||document.documentElement.clientWidth;}
+var logWidth=function(){if(viewportWidth>640){console.log(viewportWidth);}else{console.log('Small viewport');}}
+setViewportWidth();window.addEventListener('resize',function(){setViewportWidth();},false);var dianomiContextFeed={dianomiDeclarations:function(args){var script=document.createElement("script");this.dianomi_context_wrapper=document.createElement("div");var width="650px";var height="auto";if(args.hasOwnProperty("width")){width=args.width;}
+if(args.hasOwnProperty("height")){height=args.height;}
+this.cf=data.partner_id+"."+data.cfid;if(data.name){this.cf=this.cf+"."+data.name;}
+this.dianomi_context_wrapper.style.maxWidth=width;this.dianomi_context_wrapper.style.height=height;this.dianomi_context_wrapper.style.margin="0 auto";this.dianomi_context_wrapper.appendChild(script);context_element.appendChild(this.dianomi_context_wrapper);var dianomiHeader=document.createElement("div");dianomiHeader.style.borderBottom="1px solid #ccc";dianomiHeader.style.marginBottom="5px";dianomiHeader.style.position="relative";dianomiHeader.style.height="13px";dianomiHeader.innerHTML="<a href='https://"+dianomiContextHost+".dianomi.com/cms/whats-this/?utm.source="+
+window.location.hostname+
+"&utm_medium=smartad_sponsor_link' target='_blank'> <span style='font-size: 10px;color: #748683; position: absolute; width: 125px; right: 0; font-family: helvetica, arial, sans-serif;'>Context Feed by <img src='https://www.dianomi.com/img/dianomi-max-200x38.png' alt='dianomi' style='width: 45px;height: auto; display: inline;'><img src='https://www.dianomi.com/cgi-bin/pixeltrack.pl?cf="+encodeURIComponent(this.cf)+"'></span></a>";context_element.appendChild(this.dianomi_context_wrapper);var dianomiContextCss=document.createElement("link");dianomiContextCss.setAttribute("rel","stylesheet");dianomiContextCss.setAttribute("type","text/css");dianomiContextCss.setAttribute("href","https://"+dianomiContextHost+"/partner/dianomi/css/dianomi-context.css?v=1.1");document.body.appendChild(dianomiContextCss);},video:function(args){var dianomiVideoContainer="dv_"+context_id+args["id"];var dianomiVideoWrapperID=context_id+args["id"];var dvDiv=document.createElement("div");if(dvDiv.classList){dvDiv.classList.add("dianomi_video");}else{dvDiv.className+=" "+"dianomi_video";}
+dvDiv.setAttribute("data-dianomi-video-id",args["id"]);if(this.cf){dvDiv.setAttribute("data-dianomi-cf-name",this.cf);}
+dvDiv.setAttribute("data-dianomi-video-host",dianomiContextHost);dvDiv.id=dianomiVideoContainer;dvDiv.style.width=args["width"];dianomiContextSetFloat(dvDiv,args,viewportWidth);if(args.hasOwnProperty("maxWidth")){dvDiv.style.maxWidth=args["maxWidth"]};this.dianomi_context_wrapper.appendChild(dvDiv);var dvScript=document.createElement("script");dvScript.src="https://"+dianomiContextHost+"/js/videofeed-combined.js?id=33";dvScript.id="dianomi_video_script";dvScript.type="text/javascript";document.head.appendChild(dvScript);},smartad:function(args){var dianomiSmartadFrame=document.createElement("iframe");var url="https://"+dianomiContextHost+"/smartads.epl?id="+
+args["id"]+
+"&num_ads="+
+args["num_ads"];if(args.hasOwnProperty("shuffle")&&args.shuffle==="0"){url+="&shuffle=0";}
+if(args.hasOwnProperty("start")){url+="&start="+args["start"]}
+if(args.hasOwnProperty("seed")){url+="&seed="+seed}
+if(this.cf){url+="&cf="+encodeURIComponent(this.cf);}
+dianomiSmartadFrame.id=args["id"];if(args.hasOwnProperty("lazy")&&args.lazy==="1"){dianomiSmartadFrame.className="lazy";dianomiSmartadFrame.setAttribute("data-src",url);}else{dianomiSmartadFrame.setAttribute("src",url);}
+if(args.hasOwnProperty("scrolling")){dianomiSmartadFrame.style.scrolling=args.scrolling;}
+dianomiSmartadFrame.style.minWidth=args["minWidth"];dianomiContextSetWidth(dianomiSmartadFrame,args,viewportWidth);dianomiContextSetFloat(dianomiSmartadFrame,args,viewportWidth);dianomiContextSetHeight(dianomiSmartadFrame,args,viewportWidth);window.addEventListener('resize',function(){dianomiContextSetWidth(dianomiSmartadFrame,args,viewportWidth);dianomiContextSetFloat(dianomiSmartadFrame,args,viewportWidth);dianomiContextSetHeight(dianomiSmartadFrame,args,viewportWidth);},false);dianomiSmartadFrame.style.border="none";dianomiSmartadFrame.style.overflow="hidden";dianomiSmartadFrame.style.display="block";this.dianomi_context_wrapper.appendChild(dianomiSmartadFrame);if(args.hasOwnProperty("lazy")&&args.lazy==="1"){if(lazyLoadInstance){lazyLoadInstance.update();}}},iframe:function(args){var dianomiContextIframe=document.createElement('iframe');dianomiContextIframe.setAttribute('data-src',args["src"]);dianomiContextIframe.setAttribute('src',args["src"]);dianomiContextSetHeight(dianomiContextIframe,args,viewportWidth);window.addEventListener('resize',function(){dianomiContextSetHeight(dianomiContextIframe,args,viewportWidth);},false);dianomiContextIframe.style.width=args["width"];dianomiContextIframe.style.scrolling=args["scrolling"];dianomiContextIframe.style.border=args["border"];this.dianomi_context_wrapper.appendChild(dianomiContextIframe);},recirc:function(args){var dianomiRecircFrame=document.createElement("iframe");var url="https://"+dianomiContextHost+"/recirculation.epl?id="+args["id"];if(args.hasOwnProperty("start")){url+="&start="+args.start;}
+if(args.hasOwnProperty("seed")){url+="&seed="+seed;}
+if(this.cf){url+="&cf="+encodeURIComponent(this.cf);}
+if(args.hasOwnProperty("lazy")&&args.lazy==="1"){dianomiRecircFrame.className="lazy";dianomiRecircFrame.setAttribute("data-src",url);}else{dianomiRecircFrame.setAttribute("src",url);}
+var recircWidth="100%";if(args.hasOwnProperty("width")){recircWidth=args.width;}
+dianomiRecircFrame.style.width=recircWidth;dianomiContextSetFloat(dianomiRecircFrame,args,viewportWidth);dianomiContextSetHeight(dianomiRecircFrame,args,viewportWidth);dianomiContextSetWidth(dianomiRecircFrame,args,viewportWidth);window.addEventListener('resize',function(){dianomiContextSetFloat(dianomiRecircFrame,args,viewportWidth);dianomiContextSetHeight(dianomiRecircFrame,args,viewportWidth);dianomiContextSetWidth(dianomiRecircFrame,args,viewportWidth);},false);dianomiRecircFrame.style.minWidth=args["minWidth"];dianomiRecircFrame.style.border="none";dianomiRecircFrame.style.overflow="hidden";dianomiRecircFrame.style.display="block";this.dianomi_context_wrapper.appendChild(dianomiRecircFrame);if(args.hasOwnProperty("lazy")&&args.lazy==="1"){if(lazyLoadInstance){lazyLoadInstance.update();}}}};var args={};if(data.hasOwnProperty("args")){args=data.args;}
+dianomiContextFeed.dianomiDeclarations(args);var host=window.location.hostname;var country_code=data.user.country_code;for(var i=0;i<data.units.length;i++){var unit=data.units[i];if(!is_when_valid(unit,"domain",host)){continue;}
+if(!is_when_valid(unit,"country_code",country_code)){continue;}
+dianomiContextFeed[unit.type](unit.args);}
+downloadAndInstantiateLazyload();}
+function dianomiContextSetHeight(frame,args,viewportWidth){var height;if(args.hasOwnProperty("mobileHeight")&&(viewportWidth<480)){height=args["mobileHeight"];}
+else if(args.hasOwnProperty("tabletHeight")&&(viewportWidth<769)&&(viewportWidth>=480)){height=args["tabletHeight"];}
+else if(args.hasOwnProperty("responsiveHeight")){window.addEventListener('message',function(e){if((typeof e.data==='string')&&(e.origin==='https://'+dianomiContextHost)&&(/-\d\d\d\d$/.test(e.data))){var data=e.data.split('-');scroll_height=data[0];frame.style.height=scroll_height+'px';height=scroll_height+'px';}},false);}
+if(height!==undefined||args.hasOwnProperty("responsiveHeight")){frame.style.height=height;}
+else{frame.style.height=args["height"];}}
+function dianomiContextSetWidth(frame,args,viewportWidth){if(args.hasOwnProperty("mobileWidth")){if(viewportWidth<580){frame.style.width=args["mobileWidth"];}
+else{frame.style.width=args["width"];}}
+else{frame.style.width=args["width"];}}
+function dianomiContextSetFloat(frame,args,viewportWidth){if(args.hasOwnProperty("mobileFloat")){if(viewportWidth<480){frame.style.cssFloat=args["mobileFloat"];}
+else{frame.style.cssFloat=args["float"];}}
+else{frame.style.cssFloat=args["float"];}}
+function dianomiContextElement(el){var done=el.getAttribute("data-dianomi-context-done");if(done&&done==="1"){return;}
+var id=el.getAttribute("data-dianomi-context-id");var sd=el.getAttribute("data-dianomi-context-hostname");if(id===null){console.log("Couldn't find data-dianomi-context-id",el);return;}
+if(sd){dianomiContextHost=sd;}
+var xmlHttpRequest=new XMLHttpRequest();xmlHttpRequest.open("GET","https://"+dianomiContextHost+"/cgi-bin/context.pl?id="+id+"&h="+window.location.hostname,true);if(dianomiContextHost==="dev.dianomi.com"){xmlHttpRequest.withCredentials=true;}
+xmlHttpRequest.onreadystatechange=function(){if(xmlHttpRequest.readyState!=4||xmlHttpRequest.status!=200)
+return;dianomiLoadContext(id,el,JSON.parse(xmlHttpRequest.responseText));};el.setAttribute("data-dianomi-context-done","1");xmlHttpRequest.send();}
+function dianomiReloadContext(){var contextFeeds=document.querySelectorAll(".dianomi_context");for(var i=0;i<contextFeeds.length;i++){dianomiContextElement(contextFeeds[i]);}}
+function dianomiContextReady(fn){if(document.attachEvent?document.readyState==="complete":document.readyState!=="loading"){fn();}else{document.addEventListener("DOMContentLoaded",fn);}}
+dianomiContextReady(dianomiReloadContext);

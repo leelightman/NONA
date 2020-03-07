@@ -1,0 +1,15 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+
+.renderer canvas{
+	width: 100% !important; 
+  height: 100% !important;
+}
+.carousel-control{
+  background:none !important;
+}

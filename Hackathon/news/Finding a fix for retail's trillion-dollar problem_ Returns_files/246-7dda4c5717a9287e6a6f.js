@@ -1,0 +1,1 @@
+(window.__LOADABLE_LOADED_CHUNKS__=window.__LOADABLE_LOADED_CHUNKS__||[]).push([[246],{864:function(_,A,D){_.exports={electricblue:"#1ff1c8",orange:"#f87121"}}}]);

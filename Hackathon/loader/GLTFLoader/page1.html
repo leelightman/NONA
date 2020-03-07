@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kainan</title>
+    <meta charset=UTF-8 />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--link rel="stylesheet" href="css/bootstrap.css"-->
+    <!--script src="js/bootstrap.js"></script-->
+    <script src="js/three.js"></script>
+    <script src="js/GLTFLoader.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  </head>
+  <body style="background-color: #a9a9a9">
+    <header class="bg-primary mb-4">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">WebSiteName</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="page1.html">Pictures</a></li>
+            <li><a href="#">Page 2</a></li>
+            <li><a href="#">Page 3</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <script src="js/static.js"></script>    
+    <!--script src="js/test.js"></script-->    
+    <script>
+      $(document).ready(function(){
+        // Activate Carousel
+        $("#myCarousel").carousel('pause');
+          
+        // Enable Carousel Indicators
+        $(".item1").click(function(){
+          $("#myCarousel").carousel(0);
+        });
+        $(".item2").click(function(){
+          $("#myCarousel").carousel(1);
+        });
+        $(".item3").click(function(){
+          $("#myCarousel").carousel(2);
+        });
+        $(".item4").click(function(){
+          $("#myCarousel").carousel(3);
+        });
+          
+        // Enable Carousel Controls
+        $(".left").click(function(){
+          $("#myCarousel").carousel("prev");
+        });
+        $(".right").click(function(){
+          $("#myCarousel").carousel("next");
+        });
+      });
+    </script>
+  </body>
+</html>
