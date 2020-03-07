@@ -6,10 +6,11 @@ apparel retail market size is 368 billion in US in 2019. In 2018, retail e-comme
 
 
 
-Developer stater:
+Development setup steps:
 - `cd Hackathon/flask`
 - `python3 -m venv venv`
+# on windows, you should run .venv\Scripts\activate.bat 
 - `virtualenv venv`
 - `source venv/bin/activate` (you should see something like `(venv) delong@...`)
-- `pip install -r requirements.txt`
+- `pip3 install -r requirements.txt`
 - `flask run`
