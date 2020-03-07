@@ -14,6 +14,23 @@
   <script>
     NONA.init();
     NONA.loadModel("black_female/carla.glb", 100, 2);
+
+    document.addEventListener("keydown", onDocumentKeyDown, false);
+
+    function onDocumentKeyDown(event) {
+      var keyCode = event.which;
+      if (keyCode == 90) {
+        NONA.loadModel("black_female/carla.glb", 100, 2);
+
+      }
+      else if (keyCode == 88) {
+        NONA.loadModel("white_male/h2w2.glb", 100, 2);
+      }
+      else if (keyCode == 67) {
+        NONA.loadModel("white_female/clau_tex.glb", 100, 2);
+      }
+    };
+
   </script>
 </body>
 

@@ -15,7 +15,7 @@ NONA.init = function () {
     NONA.camera.position.y = 0;
     NONA.camera.position.z = 0;
 
-    controls = new THREE.OrbitControls(NONA.camera, NONA.renderer.domElement);
+    controls = new THREE.OrbitControls(NONA.camera);
     // controls.addEventListener("change", NONA.renderer);
 
     hlight = new THREE.AmbientLight(0x404040, 5);
@@ -42,7 +42,14 @@ NONA.loadModel = function (model, weight, height) {
         model.scale.set(1, 1, 1);
         // Lower Model by Height / 2 to Center Camera at Mid-Height
         model.position.set(0, - (height / 2), 0);
-        NONA.scene.add(gltf.scene);
+
+        // Remove Old Model from Scene
+        if (NONA.currentModel) {
+            NONA.scene.remove(NONA.currentModel);
+        }
+
+        NONA.currentModel = gltf.scene
+        NONA.scene.add(NONA.currentModel);
         NONA.animate();
     });
 }
