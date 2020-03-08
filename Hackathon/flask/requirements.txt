@@ -18,3 +18,6 @@ pytest-cov==2.4.0
 
 # Enable .flaskenv file to save env vars automatically
 python-dotenv==0.12.0
+
+#gunicorn
+gunicorn==20.0.4
