@@ -1,11 +1,62 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
+<div class="container" width="100%">
+  <div class="row">
+    <iframe
+      class="col"
+      src="/model-embed?model=pmh2w2"
+      width="100%"
+      height="400px"
+      style="overflow: hidden;"
+      scrolling="no"
+      frameborder="0"
+    ></iframe>
 
-{% block content %}
-<div class='container' width='100%'>
-    <div class='row'>
-        <iframe class='col' src="/model-embed?model=sweater_r" width='100%' height='400px'></iframe>
+    <iframe
+      class="col"
+      src="/model-embed?model=mfh2w1"
+      width="100%"
+      height="400px"
+      style="overflow: hidden;"
+      scrolling="no"
+      frameborder="0"
+    ></iframe>
 
-        <iframe class='col' src="/model-embed?model=sweater_b" width='100%' height='400px'></iframe>
-    </div>
+    <iframe
+      class="col"
+      src="/model-embed?model=dfh1w3"
+      width="100%"
+      height="400px"
+      style="overflow: hidden;"
+      scrolling="no"
+      frameborder="0"
+    ></iframe>
+
+
+    <iframe
+      class="col"
+      src="/model-embed?model=mmh2w2"
+      width="100%"
+      height="400px"
+      style="overflow: hidden;"
+      scrolling="no"
+      frameborder="0"
+    ></iframe>
+
+    <iframe
+      class="col"
+      src="/model-embed?model=pfh2w2"
+      width="100%"
+      height="400px"
+      style="overflow: hidden;"
+      scrolling="no"
+      frameborder="0"
+    ></iframe>
+
+  </div>
 </div>
+
+<script>
+  document.getElementById("nav-lookbook").className += "active";
+</script>
+
 {% endblock %}

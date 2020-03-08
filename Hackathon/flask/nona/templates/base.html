@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 
-<title>{% block title %}{% endblock %} - NONA</title>
+<title>{% block title %}{% endblock %} NONA </title>
 <meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css?family=Cinzel:400,700|Montserrat:400,700|Roboto&display=swap"
   rel="stylesheet">
@@ -52,11 +52,12 @@
           <div class="mx-auto">
             <nav class="site-navigation position-relative text-left" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mx-auto d-none pl-0 d-lg-block border-none">
-                <li class="active"><a href="/" class="nav-link text-left">Home</a></li>
-                <li><a href="/about" class="nav-link text-left">About</a></li>
-                <li><a href="/shop" class="nav-link text-left">Shop</a></li>
+                <li id="nav-home"><a href="/" class="nav-link text-left">Home</a></li>
+                <li id="nav-about"><a href="/about" class="nav-link text-left">About</a></li>
+                <li id="nav-lookbook"><a href="/lookbook" class="nav-link text-left">Lookbook</a></li>
+                <li id="nav-shop"><a href="/shop" class="nav-link text-left">Shop</a></li>
                 {% if g.user %}
-                <li><a href="contact.html" class="nav-link text-left">{{ g.user['username'] }}</a></li>
+                <li id="nav-user"><a href="/avatar" class="nav-link text-left">{{ g.user['username'] }}</a></li>
                 <li><a href="{{ url_for('auth.logout') }}" class="nav-link text-left">Log Out</a></li>
                 {% else %}
                 <li><a href="{{ url_for('auth.register') }}" class="nav-link text-left">Register</a></li>
@@ -79,6 +80,38 @@
     <div class="flash">{{ message }}</div>
     {% endfor %}
     {% block content %}{% endblock %}
+
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <div class="social-icons">
+              <a href="#"><span class="icon-facebook"></span></a>
+              <a href="#"><span class="icon-twitter"></span></a>
+              <a href="#"><span class="icon-youtube"></span></a>
+              <a href="#"><span class="icon-instagram"></span></a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="copyright">
+              <p>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                All rights reserved | This website is designed during
+                <i class="icon-heart text-danger" aria-hidden="true"></i> by
+                <a href="https://colorlib.com" target="_blank">HackNYU 2020</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- loader -->
     <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
