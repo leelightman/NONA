@@ -1,6 +1,8 @@
 import os
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request, g, redirect, url_for
+
+from nona.db import get_db
 
 
 def create_app(test_config=None):
@@ -68,6 +70,35 @@ def create_app(test_config=None):
     @app.route('/lookbook')
     def lookbook():
         return render_template('lookbook.html')
+    
+    @app.route('/save')
+    def save():
+        body_height  = request.args.get('body_height', default=None, type=int)
+        body_weight  = request.args.get('body_weight', default=None, type=int)
+        skin_tone  = request.args.get('skin_tone', default=None, type=str)
+        sex  = request.args.get('sex', default=None, type=str)
+        error = None
+        
+        if not body_height:
+            error = 'body_height is required.'
+        if not body_weight:
+            error = 'body_weight is required.'
+        if not skin_tone:
+            error = 'skin_tone is required.'
+        if not sex:
+            error = 'sex is required.'
+
+        if error is not None:
+            flash(error)
+        else:
+            db = get_db()
+            db.execute(
+                'INSERT INTO avatar (body_height, body_weight, skin_tone, sex, owner_id)'
+                ' VALUES (?, ?, ?, ?, ?)',
+                (body_height, body_weight, skin_tone, sex, g.user['id'])
+            )
+            db.commit()
+            return redirect(url_for('avatar.index'))
 
     from . import db
     db.init_app(app)
