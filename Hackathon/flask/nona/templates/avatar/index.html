@@ -13,15 +13,13 @@
 
 {% block content %}
   <iframe
+    id="3dmodel"
     class="test"
-    src="modeloader/loader"
+    src="/model-embed?model=pmh1w1"
     width="100%"
     height="100%"
     style="min-height:600px"
   ></iframe>
-  {% if not loop.last %}
-    <hr>
-  {% endif %}
   <article class="avatar">
     <header>
       <div>
@@ -34,9 +32,8 @@
     <div class="about"> skin tone: {{ avatar['skin_tone'] }}</div>
     <div class="about"> sex: {{ avatar['sex'] }}</div>
   </article>
-{% endblock %}
 
-<script>
+  <script>
   function convertMetricsToPickle(bodyHeight, bodyWeight, skinTone, sex) {
     pickle = '';
     pickle += skinTone[0] + sex[0];
@@ -73,6 +70,13 @@
       }
     }
 
+    console.log("pickle:")
+    console.log(pickle)
     return pickle
   }
-</script>
+
+  pickle = convertMetricsToPickle("{{ avatar['body_height'] }}", "{{ avatar['body_weight'] }}", "{{ avatar['skin_tone']  }}", "{{ avatar['sex'] }}");
+  document.getElementById("3dmodel").src = "/model-embed?model=" + pickle;
+
+  </script>
+{% endblock %}
