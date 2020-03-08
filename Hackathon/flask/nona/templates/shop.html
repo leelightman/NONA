@@ -12,7 +12,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
-            <div class="owl-carousel hero-slide owl-style">
+            <div>
               <!--img
                 src="{{ url_for('static', filename='images/zepeto/1.jpg') }}"
                 alt="Image"
@@ -28,7 +28,12 @@
                 alt="Image"
                 class="img-fluid"
               /-->
-              <iframe class="test" src="modeloader/loader" width="100%" height="600px"></iframe>
+              <iframe
+                class="test"
+                src="modeloader/loader"
+                width="100%"
+                height="600px"
+              ></iframe>
             </div>
           </div>
           <div class="col-lg-5 ml-auto item-list">
@@ -36,8 +41,11 @@
               <div class="col">
                 <div class="wine_v_1 text-center pb-4">
                   <div id="item-detail" class="thumbnail d-block mb-4">
-                    <img src="{{ url_for('static', filename='images/products/6.png') }}" alt="Image"
-                      class="img-fluid" />
+                    <img
+                      src="{{ url_for('static', filename='images/products/6.png') }}"
+                      alt="Image"
+                      class="img-fluid"
+                    />
                   </div>
                   <!--button id="myBtn">Open Modal</button-->
 
@@ -48,8 +56,11 @@
                       <div class="row">
                         <div class="col-4">
                           <div class="card" style="width: 18rem;">
-                            <img src="{{ url_for('static', filename='images/products/6.png') }}" alt="Image"
-                              class="img-fluid" />
+                            <img
+                              src="{{ url_for('static', filename='images/products/6.png') }}"
+                              alt="Image"
+                              class="img-fluid"
+                            />
                             <div class="card-body">
                               <h5 class="card-title">Top</h5>
                               <p class="card-text">
@@ -86,9 +97,12 @@
               </div>
               <div class="col">
                 <div class="wine_v_1 text-center pb-4">
-                  <a href="shop-single.html" class="thumbnail d-block mb-4"><img
-                      src="{{ url_for('static', filename='images/products/9.png') }}" alt="Image"
-                      class="img-fluid" /></a>
+                  <a href="shop-single.html" class="thumbnail d-block mb-4"
+                    ><img
+                      src="{{ url_for('static', filename='images/products/9.png') }}"
+                      alt="Image"
+                      class="img-fluid"
+                  /></a>
                   <div>
                     <h3 class="heading mb-1">
                       <a href="#">Bottom</a>
@@ -101,9 +115,12 @@
             <div class="row">
               <div class="col">
                 <div class="wine_v_1 text-center pb-4">
-                  <a href="shop-single.html" class="thumbnail d-block mb-4"><img
-                      src="{{ url_for('static', filename='images/products/8.png') }}" alt="Image"
-                      class="img-fluid" /></a>
+                  <a href="shop-single.html" class="thumbnail d-block mb-4"
+                    ><img
+                      src="{{ url_for('static', filename='images/products/8.png') }}"
+                      alt="Image"
+                      class="img-fluid"
+                  /></a>
                   <div>
                     <h3 class="heading mb-1">
                       <a href="#">Accessories</a>
@@ -129,9 +146,12 @@
               </div>
               <div class="col">
                 <div class="wine_v_1 text-center pb-4">
-                  <a href="shop-single.html" class="thumbnail d-block mb-4"><img
-                      src="{{ url_for('static', filename='images/products/4.jpg') }}" alt="Image"
-                      class="img-fluid" /></a>
+                  <a href="shop-single.html" class="thumbnail d-block mb-4"
+                    ><img
+                      src="{{ url_for('static', filename='images/products/4.jpg') }}"
+                      alt="Image"
+                      class="img-fluid"
+                  /></a>
                   <div>
                     <h3 class="heading mb-1">
                       <a href="#">Shoes</a>
@@ -243,17 +263,17 @@
     var span = document.getElementsByClassName("close")[0];
 
     // When the user clicks on the button, open the modal
-    btn.onclick = function () {
+    btn.onclick = function() {
       modal.style.display = "block";
     };
 
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
+    span.onclick = function() {
       modal.style.display = "none";
     };
 
     // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
+    window.onclick = function(event) {
       if (event.target == modal) {
         modal.style.display = "none";
       }
