@@ -1714,7 +1714,7 @@ h5,
   font-size: 0.9rem;
 }
 .partner {
-  margin-bottom: -80px;
+  padding-bottom: 30px;
 }
 .partner-padding-20 {
   padding-top: 30px;
@@ -1723,7 +1723,7 @@ h5,
   padding-top: 50px;
 }
 .feature {
-  margin-bottom: 30px;
+  margin-top: 100px;
 }
 .card h5 {
   font-family: "Cinzel";
@@ -1742,6 +1742,10 @@ h5,
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.item-list a {
+  height: 225px;
 }
 .wine_v_1,
 .wine_h_1 {
