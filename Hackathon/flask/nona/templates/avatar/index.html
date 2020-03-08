@@ -12,26 +12,34 @@
 
 
 {% block content %}
-  <iframe
-    id="3dmodel"
-    class="test"
-    src="/model-embed?model=pmh1w1"
-    width="100%"
-    height="100%"
-    style="min-height:600px"
-  ></iframe>
-  <article class="avatar">
-    <header>
-      <div>
-        <h1>Your Measurements</h1>
-      </div>
-      <a class="action" href="{{ url_for('avatar.update', id=avatar['id']) }}">Edit</a>
-    </header>
-    <div class="body"> body height: {{ avatar['body_height'] }}</div>
-    <div class="body"> body weight: {{ avatar['body_weight'] }}</div>
-    <div class="about"> skin tone: {{ avatar['skin_tone'] }}</div>
-    <div class="about"> sex: {{ avatar['sex'] }}</div>
-  </article>
+
+  <div class="row">
+
+    <div class="col-lg-4">
+      <article class="avatar">
+        <header>
+          <h1>My Measurements</h1>
+          <a class="action" href="{{ url_for('avatar.update', id=avatar['id']) }}">Edit</a>
+        </header>
+        <div class="body"> body height: {{ avatar['body_height'] }} in</div>
+        <div class="body"> body weight: {{ avatar['body_weight'] }} lbs</div>
+        <div class="about"> skin tone: {{ avatar['skin_tone'] }}</div>
+        <div class="about"> sex: {{ avatar['sex'] }}</div>
+      </article>
+    </div>
+
+    <div class="col-lg-8">
+      <iframe
+        id="3dmodel"
+        class="test"
+        src="/model-embed?model=pmh1w1"
+        width="100%"
+        height="100%"
+        style="min-height:600px"
+      ></iframe>
+    </div>
+
+  </div>
 
   <script>
   function convertMetricsToPickle(bodyHeight, bodyWeight, skinTone, sex) {
