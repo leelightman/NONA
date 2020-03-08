@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block header %}
 
 <head>
-  <title>Wines &mdash; Website Template by Colorlib</title>
+  <title>Shop</title>
 </head>
 
 {% endblock %} {% block content %}
@@ -13,16 +13,28 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="owl-carousel hero-slide owl-style">
-              <img src="images/wine_1.png" alt="Image" class="img-fluid" />
-              <img src="images/wine_2.png" alt="Image" class="img-fluid" />
-              <img src="images/wine_3.png" alt="Image" class="img-fluid" />
+              <img
+                src="{{ url_for('static', filename='images/zepeto/1.jpg') }}"
+                alt="Image"
+                class="img-fluid"
+              />
+              <img
+                src="{{ url_for('static', filename='images/zepeto/5.png') }}"
+                alt="Image"
+                class="img-fluid"
+              />
+              <img
+                src="{{ url_for('static', filename='images/zepeto/6.png') }}"
+                alt="Image"
+                class="img-fluid"
+              />
             </div>
           </div>
           <div class="col-lg-5 ml-auto item-list">
             <div class="row">
               <div class="col">
                 <div class="wine_v_1 text-center pb-4">
-                  <a href="shop-single.html" class="thumbnail d-block mb-4"
+                  <a href="shop" class="thumbnail d-block mb-4"
                     ><img
                       src="{{ url_for('static', filename='images/products/6.png') }}"
                       alt="Image"
@@ -32,7 +44,7 @@
                     <h3 class="heading mb-1">
                       <a href="#">Top</a>
                     </h3>
-                    <span class="price">$68.00</span>
+                    <span class="price">68 lumens</span>
                   </div>
                 </div>
               </div>
@@ -48,7 +60,7 @@
                     <h3 class="heading mb-1">
                       <a href="#">Bottom</a>
                     </h3>
-                    <span class="price">$69.00</span>
+                    <span class="price">69 lumens</span>
                   </div>
                 </div>
               </div>
@@ -66,7 +78,7 @@
                     <h3 class="heading mb-1">
                       <a href="#">Accessories</a>
                     </h3>
-                    <span class="price">$79.00</span>
+                    <span class="price">79 lumens</span>
                   </div>
 
                   <!--div class="wine-actions">
@@ -97,7 +109,7 @@
                     <h3 class="heading mb-1">
                       <a href="#">Shoes</a>
                     </h3>
-                    <span class="price">$129.00</span>
+                    <span class="price">129 lumens</span>
                   </div>
                 </div>
               </div>
