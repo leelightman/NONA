@@ -12,25 +12,32 @@
 
 
 {% block content %}
-  <article class="avatar">
-    <header>
-      <div>
-        <h1>{{ avatar['title'] }}</h1>
-        <div class="about">by {{ avatar['username'] }} on {{ avatar['created'].strftime('%Y-%m-%d') }}</div>
-      </div>
-      {% if g.user['id'] == avatar['author_id'] %}
-        <a class="action" href="{{ url_for('avatar.update', id=avatar['id']) }}">Edit</a>
-      {% endif %}
-    </header>
-    <p class="body">{{ avatar['body'] }}</p>
-  </article>
+  <iframe
+    class="test"
+    src="modeloader/loader"
+    width="100%"
+    height="100%"
+    style="min-height:600px"
+  ></iframe>
   {% if not loop.last %}
     <hr>
   {% endif %}
+  <article class="avatar">
+    <header>
+      <div>
+        <h1>Your Measurements</h1>
+      </div>
+      <a class="action" href="{{ url_for('avatar.update', id=avatar['id']) }}">Edit</a>
+    </header>
+    <div class="body"> body height: {{ avatar['body_height'] }}</div>
+    <div class="body"> body weight: {{ avatar['body_weight'] }}</div>
+    <div class="about"> skin tone: {{ avatar['skin_tone'] }}</div>
+    <div class="about"> sex: {{ avatar['sex'] }}</div>
+  </article>
 {% endblock %}
 
 <script>
-  function convertToPickle(bodyHeight, bodyWeight, skinTone, sex) {
+  function convertMetricsToPickle(bodyHeight, bodyWeight, skinTone, sex) {
     pickle = '';
     pickle += skinTone[0] + sex[0];
 
@@ -65,7 +72,7 @@
         pickle += 'w1';
       }
     }
-    
+
     return pickle
   }
 </script>
