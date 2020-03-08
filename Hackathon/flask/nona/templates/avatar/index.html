@@ -1,56 +1,93 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {# {% block header %}
+<h1>{% block title %}Your 3D Avatar{% endblock %}</h1>
+{% if not g.user %}
+<a class="action" href="{{ url_for('avatar.create') }}">New</a>
+{% endif %} {% if len(avatars) == 0 %}
+<a class="action" href="{{ url_for('avatar.create') }}">New</a>
+{% endif %} {% endblock %} #} {% block content %}
 
-{# {% block header %}
-  <h1>{% block title %}Your 3D Avatar{% endblock %}</h1>
-  {% if not g.user %}
-    <a class="action" href="{{ url_for('avatar.create') }}">New</a>
-  {% endif %}
-  {% if len(avatars) == 0 %}
-    <a class="action" href="{{ url_for('avatar.create') }}">New</a>
-  {% endif %}
-{% endblock %} #}
-
-
-{% block content %}
-
-  <div id="myModal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <form action="{{ url_for('avatar.update', id=avatar['id']) }}"  method="post">
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form
+      class="avatar-form"
+      style="padding:20px;"
+      action="{{ url_for('avatar.update', id=avatar['id']) }}"
+      method="post"
+    >
+      <p>
         <label for="body_height">Body height</label>
-        <input name="body_height" id="body_height"
-          value="{{ request.form['avatar'] or avatar['body_height'] }}" required>
+        <input
+          name="body_height"
+          id="body_height"
+          value="{{ request.form['avatar'] or avatar['body_height'] }}"
+          required
+        />
+      </p>
+      <p>
         <label for="body_weight">Body weight</label>
-        <input name="body_weight" id="body_weight"
-          value="{{ request.form['avatar'] or avatar['body_weight'] }}" required>
+        <input
+          name="body_weight"
+          id="body_weight"
+          value="{{ request.form['avatar'] or avatar['body_weight'] }}"
+          required
+        />
+      </p>
+      <p>
         <label for="skin_tone">Skin tone</label>
-        <input name="skin_tone" id="skin_tone"
-          value="{{ request.form['avatar'] or avatar['skin_tone'] }}" required>
-        <label for="sex">Sex</label>
-        <input name="sex" id="sex"
-          value="{{ request.form['avatar'] or avatar['sex'] }}" required>
-        <input type="submit" value="Save">
-      </form>
-    </div>
+        <input
+          name="skin_tone"
+          id="skin_tone"
+          value="{{ request.form['avatar'] or avatar['skin_tone'] }}"
+          required
+        />
+      </p>
+      <p>
+        <label for="sex">Gender</label>
+        <input
+          name="sex"
+          id="sex"
+          value="{{ request.form['avatar'] or avatar['sex'] }}"
+          required
+        />
+      </p>
+      <input type="submit" value="Save" />
+    </form>
   </div>
-
+</div>
+<div class="container">
   <div class="row">
-
     <div class="col-lg-4">
-      <article class="avatar">
-        <header>
-          <h1>My Measurements</h1>
-          <button class="action" id="item-detail">Edit</button>
-          <form action="{{ url_for('avatar.delete', id=avatar['id']) }}" method="post">
-            <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+      <div class="avatar">
+        <div style="font-family:'Cinzel';">
+          <h2 style="margin-top:20px;font-family:'Cinzel';padding-top: 20px;">
+            My Measurements
+          </h2>
+        </div>
+        <p class="body">Height: {{ avatar['body_height'] }} in</p>
+        <p class="body">Weight: {{ avatar['body_weight'] }} lbs</p>
+        <p class="about">Skin tone: {{ avatar['skin_tone'] }}</p>
+        <p class="about">Gender: {{ avatar['sex'] }}</p>
+        <div>
+          <p style="padding-top: 10px;">
+            <button class="btn btn-primary action" id="item-detail">
+              Edit
+            </button>
+          </p>
+          <form
+            action="{{ url_for('avatar.delete', id=avatar['id']) }}"
+            method="post"
+          >
+            <input
+              class="danger btn btn-primary"
+              type="submit"
+              value="Delete"
+              onclick="return confirm('Are you sure?');"
+            />
           </form>
-        </header>
-        <div class="body"> body height: {{ avatar['body_height'] }} in</div>
-        <div class="body"> body weight: {{ avatar['body_weight'] }} lbs</div>
-        <div class="about"> skin tone: {{ avatar['skin_tone'] }}</div>
-        <div class="about"> sex: {{ avatar['sex'] }}</div>
-      </article>
+        </div>
+      </div>
     </div>
 
     <div class="col-lg-8">
@@ -60,57 +97,62 @@
         src="/model-embed?model=pmh1w1"
         width="100%"
         height="100%"
-        style="min-height:600px"
+        style="min-height:600px;overflow: hidden;"
+        scrolling="no"
+        frameborder="0"
       ></iframe>
     </div>
-
   </div>
-
-  <script>
+</div>
+<script>
   function convertMetricsToPickle(bodyHeight, bodyWeight, skinTone, sex) {
-    pickle = '';
+    pickle = "";
     pickle += skinTone[0] + sex[0];
 
-    if (sex[0] == 'm') {
+    if (sex[0] == "m") {
       if (bodyHeight > 70) {
-        pickle += 'h3';
+        pickle += "h3";
       } else if (bodyHeight > 60) {
-        pickle += 'h2';
+        pickle += "h2";
       } else {
-        pickle += 'h1';
+        pickle += "h1";
       }
       if (bodyWeight > 200) {
-        pickle += 'w3';
+        pickle += "w3";
       } else if (bodyHeight > 140) {
-        pickle += 'w2';
+        pickle += "w2";
       } else {
-        pickle += 'w1';
+        pickle += "w1";
       }
     } else {
       if (bodyHeight > 66) {
-        pickle += 'h3';
+        pickle += "h3";
       } else if (bodyHeight > 56) {
-        pickle += 'h2';
+        pickle += "h2";
       } else {
-        pickle += 'h1';
+        pickle += "h1";
       }
       if (bodyWeight > 150) {
-        pickle += 'w3';
+        pickle += "w3";
       } else if (bodyHeight > 100) {
-        pickle += 'w2';
+        pickle += "w2";
       } else {
-        pickle += 'w1';
+        pickle += "w1";
       }
     }
 
-    console.log("pickle:")
-    console.log(pickle)
-    return pickle
+    console.log("pickle:");
+    console.log(pickle);
+    return pickle;
   }
 
-  pickle = convertMetricsToPickle("{{ avatar['body_height'] }}", "{{ avatar['body_weight'] }}", "{{ avatar['skin_tone']  }}", "{{ avatar['sex'] }}");
+  pickle = convertMetricsToPickle(
+    "{{ avatar['body_height'] }}",
+    "{{ avatar['body_weight'] }}",
+    "{{ avatar['skin_tone']  }}",
+    "{{ avatar['sex'] }}"
+  );
   document.getElementById("3dmodel").src = "/model-embed?model=" + pickle;
-
 
   var modal = document.getElementById("myModal");
 
@@ -121,20 +163,20 @@
   var span = document.getElementsByClassName("close")[0];
 
   // When the user clicks on the button, open the modal
-  btn.onclick = function () {
+  btn.onclick = function() {
     modal.style.display = "block";
   };
 
   // When the user clicks on <span> (x), close the modal
-  span.onclick = function () {
+  span.onclick = function() {
     modal.style.display = "none";
   };
 
   // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function (event) {
+  window.onclick = function(event) {
     if (event.target == modal) {
       modal.style.display = "none";
     }
   };
-  </script>
+</script>
 {% endblock %}

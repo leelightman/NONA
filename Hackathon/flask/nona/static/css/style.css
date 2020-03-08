@@ -1752,7 +1752,14 @@ h5,
   height: 225px;
   color: white;
 }
-
+.avatar-form input {
+  border-radius: 5px;
+  border: 2px solid;
+  padding-left: 5px;
+}
+.avatar-form {
+  width: 50%;
+}
 .modal .card {
   margin-left: 30px;
   border: 0;
@@ -1786,7 +1793,7 @@ h5,
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 50%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
@@ -1832,7 +1839,7 @@ h5,
   margin: 225px auto 0 auto;
   padding: 0;
   border: 1px solid #888;
-  width: 80%;
+  width: 60%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   animation-name: animatetop;
   animation-duration: 0.4s;
