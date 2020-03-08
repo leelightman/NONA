@@ -1713,18 +1713,44 @@ h5,
 .single-content {
   font-size: 0.9rem;
 }
-
+.partner {
+  margin-bottom: -80px;
+}
 .partner-padding-20 {
   padding-top: 30px;
 }
 .partner-padding-50 {
   padding-top: 50px;
 }
-
+.feature {
+  margin-bottom: 30px;
+}
+.card h5 {
+  font-family: "Cinzel";
+  color: #000;
+  height: 40px;
+}
+.feature .card {
+  border: none;
+  text-align: center;
+  font-size: 1rem;
+  color: #000;
+}
+.feature .card img {
+  height: 100px;
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 .wine_v_1,
 .wine_h_1 {
   position: relative;
   margin-bottom: 30px;
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .wine_v_1:before,
 .wine_h_1:before {

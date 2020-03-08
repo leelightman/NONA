@@ -1,37 +1,31 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="stylesheet" type="text/css" href="css/styles.css" />
-</head>
+  <body>
+    <script src="js/three.js"></script>
+    <script src="js/GLTFLoader.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    <script src="js/ModelLoader.js"></script>
+    <script>
+      NONA.init();
+      NONA.loadModel("black_female/h2w2.glb", 100, 2);
 
-<body>
-  <script src="js/three.js"></script>
-  <script src="js/GLTFLoader.js"></script>
-  <script src="js/OrbitControls.js"></script>
-  <script src="js/ModelLoader.js"></script>
-  <script>
-    NONA.init();
-    NONA.loadModel("black_female/carla.glb", 100, 2);
+      document.addEventListener("keydown", onDocumentKeyDown, false);
 
-    document.addEventListener("keydown", onDocumentKeyDown, false);
-
-    function onDocumentKeyDown(event) {
-      var keyCode = event.which;
-      if (keyCode == 90) {
-        NONA.loadModel("black_female/carla.glb", 100, 2);
-
+      function onDocumentKeyDown(event) {
+        var keyCode = event.which;
+        if (keyCode == 90) {
+          NONA.loadModel("black_female/h2w2.glb", 100, 2);
+        } else if (keyCode == 88) {
+          NONA.loadModel("white_male/h2w2.glb", 100, 2);
+        } else if (keyCode == 67) {
+          NONA.loadModel("white_female/h2w2.glb", 100, 2);
+        }
       }
-      else if (keyCode == 88) {
-        NONA.loadModel("white_male/h2w2.glb", 100, 2);
-      }
-      else if (keyCode == 67) {
-        NONA.loadModel("white_female/clau_tex.glb", 100, 2);
-      }
-    };
-
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>
