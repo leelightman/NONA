@@ -82,6 +82,35 @@ $(document).ready(function () {
     );
   }
 
+  function processMessage(message) {
+    message = message.toLowerCase()
+    let finished = false;
+    if (message.includes('pale')) {
+      finished = true;
+    }
+    else if (message.includes('medium')) {
+      finished = true;
+    }
+    else if (message.includes('dark')) {
+      finished = true;
+    }
+
+    if (message.includes('pale, medium or dark')) {
+      finished = false;
+      return;
+    }
+
+    if (finished) {
+      let parts = message.split(" ");
+      let name = parts[0];
+      let heightParts = parts[1].split("'");
+      let inches = heightParts[0] * 12 + heightParts[1];
+      let weight = parts[2];
+      let tone = parts[3];
+      window.open(`/build?name=${name}&height=${inches}&weight=${weight}&tone=${tone}`);
+    }
+  }
+
   /* ----- Send the message to backend and display response ----- */
   function insertMessage() {
     msg = $(".message-input").val(); // grab the content that user inputs
@@ -109,6 +138,7 @@ $(document).ready(function () {
           for (var message of messages) {
             if (message.type === "unstructured") {
               insertResponseMessage(message.unstructured.text); // display messaged sent back from backend
+              processMessage(message.unstructured.text)
               console.log("backend start");
               console.log(message);
               console.log("backend end");
