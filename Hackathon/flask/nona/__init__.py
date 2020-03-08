@@ -37,6 +37,10 @@ def create_app(test_config=None):
     def embed():
         return render_template('avatar/embed.html')
 
+    @app.route('/modeloader/loader')
+    def loader():
+        return render_template('modeloader/loader.html')
+
     @app.route('/shop')
     def shop():
         return render_template('shop.html')
@@ -74,7 +78,7 @@ def create_app(test_config=None):
 
     from . import auth
     app.register_blueprint(auth.bp)
-    
+
     from . import avatar
     app.register_blueprint(avatar.bp)
     app.add_url_rule('/avatar', endpoint='avatar.index')
