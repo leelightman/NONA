@@ -1695,7 +1695,7 @@ h5,
   font-size: 0.85rem;
   text-align: center;
   padding: 7rem 0;
-  border-top: 1px solid #efefef;
+  /*border-top: 1px solid #efefef;*/
 }
 
 .top-social a {
@@ -1848,10 +1848,20 @@ h5,
   background-attachment: fixed;
   background-position: center center;
 }
-.hero-2 > .container .row {
+
+.hero-2 video {
+  overflow: hidden;
+  position: relative;
+  background-color: white;
+}
+.hero-2 > .container {
+  max-width: 100%;
+}
+.hero-2 > .row {
   height: 50vh;
   min-height: 500px;
   z-index: 2;
+  position: absolute;
 }
 .hero-2:before {
   content: "";
