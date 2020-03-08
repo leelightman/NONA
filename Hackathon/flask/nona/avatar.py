@@ -56,62 +56,60 @@ def create():
 
     return render_template('avatar/create.html')
 
-# def get_avatar(id, check_author=True):
-#     avatar = get_db().execute(
-#         'SELECT p.id, body_height, body_weight, created, owner_id, username'
-#         ' FROM avatar p JOIN user u ON p.owner_id = u.id'
-#         ' WHERE p.id = ?',
-#         (id,)
-#     ).fetchone()
+def get_avatar(id, check_author=True):
+    avatar = get_db().execute(
+        'SELECT p.id, body_height, body_weight, created, owner_id, username'
+        ' FROM avatar p JOIN user u ON p.owner_id = u.id'
+        ' WHERE p.id = ?',
+        (id,)
+    ).fetchone()
 
-#     if avatar is None:
-#         abort(404, "avatar id {0} doesn't exist.".format(id))
+    if avatar is None:
+        abort(404, "avatar id {0} doesn't exist.".format(id))
 
-#     if check_author and avatar['owner_id'] != g.user['id']:
-#         abort(403)
+    if check_author and avatar['owner_id'] != g.user['id']:
+        abort(403)
 
-#     return avatar
+    return avatar
 
-@bp.route('/<int:id>/update', methods=('GET', 'POST'))
+@bp.route('/<int:id>/update', methods=('POST',))
 @login_required
 def update(id):
     avatar = get_avatar(id)
 
-    if request.method == 'POST':
-        body_height = request.form['body_height']
-        body_weight = request.form['body_weight']
-        skin_tone = request.form['skin_tone']
-        sex = request.form['sex']
-        error = None
+    body_height = request.form['body_height']
+    body_weight = request.form['body_weight']
+    skin_tone = request.form['skin_tone']
+    sex = request.form['sex']
+    error = None
 
-        if not body_height:
-            error = 'body_height is required.'
-        if not body_weight:
-            error = 'body_weight is required.'
-        if not skin_tone:
-            error = 'skin_tone is required.'
-        if not sex:
-            error = 'sex is required.'
+    if not body_height:
+        error = 'body_height is required.'
+    if not body_weight:
+        error = 'body_weight is required.'
+    if not skin_tone:
+        error = 'skin_tone is required.'
+    if not sex:
+        error = 'sex is required.'
 
-        if error is not None:
-            flash(error)
-        else:
-            db = get_db()
-            db.execute(
-                'UPDATE avatar SET body_height = ?, body_weight = ?, skin_tone = ?,'
-                'sex = ? WHERE id = ?',
-                (body_height, body_weight, skin_tone, sex, id)
-            )
-            db.commit()
-            return redirect(url_for('avatar.index'))
+    if error is not None:
+        flash(error)
+    else:
+        db = get_db()
+        db.execute(
+            'UPDATE avatar SET body_height = ?, body_weight = ?, skin_tone = ?,'
+            'sex = ? WHERE id = ?',
+            (body_height, body_weight, skin_tone, sex, id)
+        )
+        db.commit()
+        return redirect(url_for('avatar.index'))
+    
 
-    return render_template('avatar/update.html', avatar=avatar)
-
-@bp.route('/<int:owner_id>/delete', methods=('POST',))
+@bp.route('/<int:id>/delete', methods=('POST',))
 @login_required
-def delete(owner_id):
-    # get_avatar(id)
+def delete(id):
+    get_avatar(id)
     db = get_db()
-    db.execute('DELETE FROM avatar WHERE owner_id = ?', (owner_id,))
+    db.execute('DELETE FROM avatar WHERE id = ?', (id,))
     db.commit()
     return redirect(url_for('avatar.index'))

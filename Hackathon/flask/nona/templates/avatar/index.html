@@ -13,13 +13,38 @@
 
 {% block content %}
 
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form action="{{ url_for('avatar.update', id=avatar['id']) }}"  method="post">
+        <label for="body_height">Body height</label>
+        <input name="body_height" id="body_height"
+          value="{{ request.form['avatar'] or avatar['body_height'] }}" required>
+        <label for="body_weight">Body weight</label>
+        <input name="body_weight" id="body_weight"
+          value="{{ request.form['avatar'] or avatar['body_weight'] }}" required>
+        <label for="skin_tone">Skin tone</label>
+        <input name="skin_tone" id="skin_tone"
+          value="{{ request.form['avatar'] or avatar['skin_tone'] }}" required>
+        <label for="sex">Sex</label>
+        <input name="sex" id="sex"
+          value="{{ request.form['avatar'] or avatar['sex'] }}" required>
+        <input type="submit" value="Save">
+      </form>
+    </div>
+  </div>
+
   <div class="row">
 
     <div class="col-lg-4">
       <article class="avatar">
         <header>
           <h1>My Measurements</h1>
-          <a class="action" href="{{ url_for('avatar.update', id=avatar['id']) }}">Edit</a>
+          <button class="action" id="item-detail">Edit</button>
+          <form action="{{ url_for('avatar.delete', id=avatar['id']) }}" method="post">
+            <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+          </form>
         </header>
         <div class="body"> body height: {{ avatar['body_height'] }} in</div>
         <div class="body"> body weight: {{ avatar['body_weight'] }} lbs</div>
@@ -86,5 +111,30 @@
   pickle = convertMetricsToPickle("{{ avatar['body_height'] }}", "{{ avatar['body_weight'] }}", "{{ avatar['skin_tone']  }}", "{{ avatar['sex'] }}");
   document.getElementById("3dmodel").src = "/model-embed?model=" + pickle;
 
+
+  var modal = document.getElementById("myModal");
+
+  // Get the button that opens the modal
+  var btn = document.getElementById("item-detail");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks on the button, open the modal
+  btn.onclick = function () {
+    modal.style.display = "block";
+  };
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
   </script>
 {% endblock %}
