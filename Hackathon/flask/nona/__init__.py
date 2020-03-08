@@ -80,6 +80,7 @@ def create_app(test_config=None):
     def lookbook():
         return render_template('lookbook.html')
 
+    # FIXME(lawrence): Tried to use BluePrint for this, but iframe will not be able to reach the logical paths in BluePrint
     @app.route('/save')
     def save():
         body_height = request.args.get('body_height', default=None, type=int)
