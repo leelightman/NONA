@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{# {% block header %}
+  <h1>{% block title %}Your 3D Avatar{% endblock %}</h1>
+  {% if not g.user %}
+    <a class="action" href="{{ url_for('avatar.create') }}">New</a>
+  {% endif %}
+  {% if len(avatars) == 0 %}
+    <a class="action" href="{{ url_for('avatar.create') }}">New</a>
+  {% endif %}
+{% endblock %} #}
+
+
+{#{% block content %}
+  {% for avatar in avatars %}
+    <article class="avatar">
+      <header>
+        <div>
+          <h1>{{ avatar['title'] }}</h1>
+          <div class="about">by {{ avatar['username'] }} on {{ avatar['created'].strftime('%Y-%m-%d') }}</div>
+        </div>
+        {% if g.user['id'] == avatar['author_id'] %}
+          <a class="action" href="{{ url_for('avatar.update', id=avatar['id']) }}">Edit</a>
+        {% endif %}
+      </header>
+      <p class="body">{{ avatar['body'] }}</p>
+    </article>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+{% endblock %}#}

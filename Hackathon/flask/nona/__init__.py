@@ -33,13 +33,9 @@ def create_app(test_config=None):
     def temp():
         return render_template('temp.html')
 
-    @app.route('/build')
-    def build():
-        return render_template('build-frame.html')
-
-    @app.route('/embed')
+    @app.route('/avatar/embed')
     def embed():
-        return render_template('build-embed.html')
+        return render_template('avatar/embed.html')
 
     @app.route('/shop')
     def shop():
@@ -75,8 +71,8 @@ def create_app(test_config=None):
     from . import auth
     app.register_blueprint(auth.bp)
     
-    from . import blog
-    app.register_blueprint(blog.bp)
-    app.add_url_rule('/blog', endpoint='blog.index')
+    from . import avatar
+    app.register_blueprint(avatar.bp)
+    app.add_url_rule('/avatar', endpoint='avatar.index')
 
     return app
