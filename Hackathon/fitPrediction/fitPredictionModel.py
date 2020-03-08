@@ -35,36 +35,48 @@ df['weight'] = df['weight'].apply(convertWeight)
 X = df[['height', 'weight', 'size']]
 Y = df['fit']
 
-predictionWeight = 0.5
+# 0.4 - 71.94%
+# 0.6 - 73.23%
+predictionWeight = 0.75
 
 count = 0
 total = 0
 
 
-def testPrediction(row):
-    test = row[['height', 'weight', 'size']].values.reshape(1, 3)
-    prediction = LM.predict(test) * 10
-    if (prediction > predictionWeight):
-        prediction = 1
+def predict(row):
+    predictX = row[['height', 'weight', 'size']].values.reshape(1, 3)
+    prediction = LM.predict(predictX) * 2
+    return prediction
 
-    elif (prediction < -predictionWeight):
-        prediction = -1
+
+def classify(row):
+    classification = 0
+    if (row['prediction'] > predictionWeight):
+        classification = 1  # Too Big
+    elif (row['prediction'] < -predictionWeight):
+        classification = -1  # Too Small
     else:
-        prediction = 0
+        classification = 0  # Fits
+    return classification
 
-    if (prediction == row['fit']):
-        prediction = 1
+
+def testAnalysis(row):
+    success = 0
+    if (row['classification'] == row['fit']):
+        success = 1
         # print('Success')
     else:
-        prediction = 0
+        success = 0
         # print('Failure')
-    return prediction
+    return success
 
 
 LM = LinearRegression()
 model = LM.fit(X, Y)
 
 print(df)
-df['predicted'] = df.apply(lambda row: testPrediction(row), axis=1)
+df['prediction'] = df.apply(lambda row: predict(row), axis=1)
+df['classification'] = df.apply(lambda row: classify(row), axis=1)
+df['success'] = df.apply(lambda row: testAnalysis(row), axis=1)
 print(df)
-print(df['predicted'].mean())
+print(df['success'].mean())
