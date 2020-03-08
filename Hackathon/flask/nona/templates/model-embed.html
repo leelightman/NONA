@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/styles.css" /> -->
+</head>
+
+<body>
+    <script src="{{ url_for('static', filename='js/three.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/GLTFLoader.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/OrbitControls.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/ModelLoader.js') }}"></script>
+    <script>
+        NONA.init();
+        NONA.loadModel("{{ model }}" + ".glb", 100, 2);
+    </script>
+</body>
+
+</html>
