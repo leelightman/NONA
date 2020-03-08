@@ -1777,6 +1777,10 @@ h5,
 #single-item {
   width: 50%;
 }
+
+#single-item img {
+  width: 100%;
+}
 .modal-content {
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
