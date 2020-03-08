@@ -1,0 +1,18 @@
+/*.chat-link {
+  text-decoration: underline;
+}
+
+.background {
+  background:#ede4f3;
+  text-shadow: none;
+  font-family: Gill Sans, sans-serif;
+}
+
+.background a {
+  color: 	#000 !important;
+  text-shadow: none !important;
+}
+
+.background .active > a {
+  border-bottom-color:	#000 !important;
+}*/
