@@ -1,1 +1,2 @@
-FLASK_APP=nona.py
+FLASK_APP=nona
+FLASK_ENV=development
