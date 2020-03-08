@@ -295,6 +295,10 @@ h5,
   color: #000;
 }
 
+.site-logo .img-fluid {
+  height: 100px;
+}
+
 .site-navbar {
   margin-bottom: 0px;
   z-index: 1999;
@@ -1746,8 +1750,13 @@ h5,
 
 .item-list a {
   height: 225px;
+  color: white;
 }
 
+.modal .card {
+  margin-left: 30px;
+  border: 0;
+}
 #item-detail:hover {
   cursor: pointer;
 }
@@ -1813,7 +1822,7 @@ h5,
 .modal-content {
   position: relative;
   background-color: #fefefe;
-  margin: 200px auto 0 auto;
+  margin: 225px auto 0 auto;
   padding: 0;
   border: 1px solid #888;
   width: 80%;
