@@ -71,18 +71,23 @@ def create_app(test_config=None):
     def categories():
         return render_template('categories.html')
 
+    @app.route('/model-embed')
+    def model():
+        model = request.args.get('model', default='missing', type=str)
+        return render_template('model-embed.html', model=model)
+
     @app.route('/lookbook')
     def lookbook():
         return render_template('lookbook.html')
-    
+
     @app.route('/save')
     def save():
-        body_height  = request.args.get('body_height', default=None, type=int)
-        body_weight  = request.args.get('body_weight', default=None, type=int)
-        skin_tone  = request.args.get('skin_tone', default=None, type=str)
-        sex  = request.args.get('sex', default=None, type=str)
+        body_height = request.args.get('body_height', default=None, type=int)
+        body_weight = request.args.get('body_weight', default=None, type=int)
+        skin_tone = request.args.get('skin_tone', default=None, type=str)
+        sex = request.args.get('sex', default=None, type=str)
         error = None
-        
+
         if not body_height:
             error = 'body_height is required.'
         if not body_weight:

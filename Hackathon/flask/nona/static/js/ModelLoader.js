@@ -68,7 +68,7 @@ NONA.initScene = function () {
 // Load a Model, with a Weight and Height in Meters
 NONA.loadModel = function (model, weight, height) {
     let loader = new THREE.GLTFLoader();
-    loader.load("models/" + model, function (gltf) {
+    loader.load("static/models/" + model, function (gltf) {
         model = gltf.scene.children[0];
         // TODO: Account for Weight
         // TODO: Scale Model based on Height
