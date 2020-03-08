@@ -65,6 +65,10 @@ def create_app(test_config=None):
     def categories():
         return render_template('categories.html')
 
+    @app.route('/lookbook')
+    def lookbook():
+        return render_template('lookbook.html')
+
     from . import db
     db.init_app(app)
 

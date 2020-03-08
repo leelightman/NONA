@@ -33,7 +33,7 @@
         <div class="row align-items-center">
           <div class="col-12 text-center">
             <a href="index.html" class="site-logo">
-              <img src="{{ url_for('static', filename='images/logo.png') }}" alt="NONA" class="img-fluid">
+              <img src="{{ url_for('static', filename='images/temp_logo.jpg') }}" alt="NONA" class="img-fluid">
             </a>
           </div>
           <a href="#" class="mx-auto d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span
@@ -50,11 +50,9 @@
           <div class="mx-auto">
             <nav class="site-navigation position-relative text-left" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mx-auto d-none pl-0 d-lg-block border-none">
-                <li class="active"><a href="index.html" class="nav-link text-left">Home</a></li>
-                <li><a href="about.html" class="nav-link text-left">About</a></li>
-                <li><a href="shop.html" class="nav-link text-left">Wines</a></li>
-                <li><a href="shop.html" class="nav-link text-left">Shop</a></li>
-                <li><a href="contact.html" class="nav-link text-left">Contact</a></li>
+                <li class="active"><a href="/" class="nav-link text-left">Home</a></li>
+                <li><a href="/about" class="nav-link text-left">About</a></li>
+                <li><a href="/shop" class="nav-link text-left">Shop</a></li>
                 {% if g.user %}
                 <li><a href="contact.html" class="nav-link text-left">{{ g.user['username'] }}</a></li>
                 <li><a href="{{ url_for('auth.logout') }}" class="nav-link text-left">Log Out</a></li>
