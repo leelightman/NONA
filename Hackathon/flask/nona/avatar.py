@@ -9,16 +9,17 @@ from nona.db import get_db
 bp = Blueprint('avatar', __name__)
 
 @bp.route('/')
+@login_required
 def index():
     db = get_db()
-    avatars = db.execute(
+    avatar = db.execute(
         'SELECT p.id, body_height, body_weight, skin_tone, sex, created, owner_id, username'
         ' FROM avatar p JOIN user u ON p.owner_id = u.id'
         ' ORDER BY created DESC'
-    ).fetchall()
+    ).fetchone()
     
-    if len(avatars) > 0:
-        return render_template('avatar/index.html', avatar=avatars[0])
+    if avatar:
+        return render_template('avatar/index.html', avatar=avatar)
     else:
         return render_template('avatar/create.html')
 
@@ -34,13 +35,10 @@ def create():
 
         if not body_height:
             error = 'body_height is required.'
-        
         if not body_weight:
             error = 'body_weight is required.'
-            
         if not skin_tone:
             error = 'skin_tone is required.'
-            
         if not sex:
             error = 'sex is required.'
 

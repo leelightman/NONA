@@ -11,22 +11,61 @@
 {% endblock %} #}
 
 
-{#{% block content %}
-  {% for avatar in avatars %}
-    <article class="avatar">
-      <header>
-        <div>
-          <h1>{{ avatar['title'] }}</h1>
-          <div class="about">by {{ avatar['username'] }} on {{ avatar['created'].strftime('%Y-%m-%d') }}</div>
-        </div>
-        {% if g.user['id'] == avatar['author_id'] %}
-          <a class="action" href="{{ url_for('avatar.update', id=avatar['id']) }}">Edit</a>
-        {% endif %}
-      </header>
-      <p class="body">{{ avatar['body'] }}</p>
-    </article>
-    {% if not loop.last %}
-      <hr>
-    {% endif %}
-  {% endfor %}
-{% endblock %}#}
+{% block content %}
+  <article class="avatar">
+    <header>
+      <div>
+        <h1>{{ avatar['title'] }}</h1>
+        <div class="about">by {{ avatar['username'] }} on {{ avatar['created'].strftime('%Y-%m-%d') }}</div>
+      </div>
+      {% if g.user['id'] == avatar['author_id'] %}
+        <a class="action" href="{{ url_for('avatar.update', id=avatar['id']) }}">Edit</a>
+      {% endif %}
+    </header>
+    <p class="body">{{ avatar['body'] }}</p>
+  </article>
+  {% if not loop.last %}
+    <hr>
+  {% endif %}
+{% endblock %}
+
+<script>
+  function convertToPickle(bodyHeight, bodyWeight, skinTone, sex) {
+    pickle = '';
+    pickle += skinTone[0] + sex[0];
+
+    if (sex[0] == 'm') {
+      if (bodyHeight > 70) {
+        pickle += 'h3';
+      } else if (bodyHeight > 60) {
+        pickle += 'h2';
+      } else {
+        pickle += 'h1';
+      }
+      if (bodyWeight > 200) {
+        pickle += 'w3';
+      } else if (bodyHeight > 140) {
+        pickle += 'w2';
+      } else {
+        pickle += 'w1';
+      }
+    } else {
+      if (bodyHeight > 66) {
+        pickle += 'h3';
+      } else if (bodyHeight > 56) {
+        pickle += 'h2';
+      } else {
+        pickle += 'h1';
+      }
+      if (bodyWeight > 150) {
+        pickle += 'w3';
+      } else if (bodyHeight > 100) {
+        pickle += 'w2';
+      } else {
+        pickle += 'w1';
+      }
+    }
+    
+    return pickle
+  }
+</script>

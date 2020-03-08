@@ -103,11 +103,12 @@ $(document).ready(function () {
     if (finished) {
       let parts = message.split(" ");
       let name = parts[0];
-      let heightParts = parts[1].split("'");
-      let inches = heightParts[0] * 12 + heightParts[1];
-      let weight = parts[2];
-      let tone = parts[3];
-      window.open(`/build?name=${name}&height=${inches}&weight=${weight}&tone=${tone}`);
+      let sex = parts[1];
+      let heightParts = parts[2].split("'");
+      let inches = parseInt(heightParts[0]) * 12 + parseInt(heightParts[1]);
+      let weight = parts[3];
+      let tone = parts[4];
+      window.open(`/save?name=${name}&body_height=${inches}&body_weight=${weight}&skin_tone=${tone}&sex=${sex}`);
     }
   }
 
