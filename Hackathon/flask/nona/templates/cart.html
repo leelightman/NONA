@@ -1,19 +1,13 @@
-{% extends 'base.html' %}
-
-{% block header %}
+{% extends 'base.html' %} {% block header %}
 
 <head>
   <title>Wines &mdash; Website Template by Colorlib</title>
 </head>
 
-{% endblock %}
-
-{% block content %}
+{% endblock %} {% block content %}
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
   <div class="site-wrap">
-
     <div class="site-section  pb-0">
       <div class="container">
         <div class="row mb-5 justify-content-center">
@@ -38,59 +32,58 @@
                 <tbody>
                   <tr>
                     <td class="product-thumbnail">
-                      <img src="images/wine_1.png" alt="Image" class="img-fluid">
+                      <img
+                        src="{{ url_for('static', filename='images/sweater.jpg')}}"
+                        alt="Image"
+                        class="img-fluid"
+                      />
                     </td>
                     <td class="product-name">
-                      <h2 class="h5 cart-product-title text-black">Trius Cabernet France 2011</h2>
+                      <h2 class="h5 cart-product-title text-black">
+                        Sweater Size: M
+                      </h2>
                     </td>
-                    <td>$55.00</td>
+                    <td>2300 Lumens</td>
                     <td>
                       <div class="input-group mb-3" style="max-width: 120px;">
                         <div class="input-group-prepend">
-                          <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+                          <button
+                            class="btn btn-outline-primary js-btn-minus"
+                            type="button"
+                          >
+                            &minus;
+                          </button>
                         </div>
-                        <input type="text" class="form-control text-center border mr-0" value="1" placeholder=""
-                          aria-label="Example text with button addon" aria-describedby="button-addon1">
+                        <input
+                          type="text"
+                          class="form-control text-center border mr-0"
+                          value="1"
+                          placeholder=""
+                          aria-label="Example text with button addon"
+                          aria-describedby="button-addon1"
+                        />
                         <div class="input-group-append">
-                          <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
+                          <button
+                            class="btn btn-outline-primary js-btn-plus"
+                            type="button"
+                          >
+                            &plus;
+                          </button>
                         </div>
                       </div>
-    
                     </td>
-                    <td>$49.00</td>
-                    <td><a href="#" class="btn btn-primary height-auto btn-sm">X</a></td>
-                  </tr>
-    
-                  <tr>
-                    <td class="product-thumbnail">
-                      <img src="images/wine_2.png" alt="Image" class="img-fluid">
-                    </td>
-                    <td class="product-name">
-                      <h2 class="h5 cart-product-title text-black">Trius Cabernet France 2011</h2>
-                    </td>
-                    <td>$49.00</td>
+                    <td>2300 Lumens</td>
                     <td>
-                      <div class="input-group mb-3" style="max-width: 120px;">
-                        <div class="input-group-prepend">
-                          <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
-                        </div>
-                        <input type="text" class="form-control text-center border mr-0" value="1" placeholder=""
-                          aria-label="Example text with button addon" aria-describedby="button-addon1">
-                        <div class="input-group-append">
-                          <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
-                        </div>
-                      </div>
-    
+                      <a href="#" class="btn btn-primary height-auto btn-sm"
+                        >X</a
+                      >
                     </td>
-                    <td>$49.00</td>
-                    <td><a href="#" class="btn btn-primary height-auto btn-sm">X</a></td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </form>
         </div>
-    
       </div>
     </div>
 
@@ -100,10 +93,14 @@
           <div class="col-md-6">
             <div class="row mb-5">
               <div class="col-md-6 mb-3 mb-md-0">
-                <button class="btn btn-primary btn-md btn-block">Update Cart</button>
+                <button class="btn btn-primary btn-md btn-block">
+                  Update Cart
+                </button>
               </div>
               <div class="col-md-6">
-                <button class="btn btn-outline-primary btn-md btn-block">Continue Shopping</button>
+                <button class="btn btn-outline-primary btn-md btn-block">
+                  Continue Shopping
+                </button>
               </div>
             </div>
             <div class="row">
@@ -112,10 +109,17 @@
                 <p>Enter your coupon code if you have one.</p>
               </div>
               <div class="col-md-8 mb-3 mb-md-0">
-                <input type="text" class="form-control py-3" id="coupon" placeholder="Coupon Code">
+                <input
+                  type="text"
+                  class="form-control py-3"
+                  id="coupon"
+                  placeholder="Coupon Code"
+                />
               </div>
               <div class="col-md-4">
-                <button class="btn btn-primary btn-md px-4">Apply Coupon</button>
+                <button class="btn btn-primary btn-md px-4">
+                  Apply Coupon
+                </button>
               </div>
             </div>
           </div>
@@ -143,11 +147,15 @@
                     <strong class="text-black">$230.00</strong>
                   </div>
                 </div>
-    
+
                 <div class="row">
                   <div class="col-md-12">
-                    <button class="btn btn-primary btn-lg btn-block" onclick="window.location='checkout.html'">Proceed To
-                      Checkout</button>
+                    <button
+                      class="btn btn-primary btn-lg btn-block"
+                      onclick="window.location='checkout.html'"
+                    >
+                      Proceed To Checkout
+                    </button>
                   </div>
                 </div>
               </div>
@@ -157,11 +165,8 @@
       </div>
     </div>
 
-
-    
     <div class="footer">
       <div class="container">
-        
         <div class="row">
           <div class="col-12 text-center">
             <div class="social-icons">
@@ -175,24 +180,24 @@
         <div class="row">
           <div class="col-12">
             <div class="copyright">
-                <p>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </p>
-
-
-
+              <p>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                All rights reserved | This template is made with
+                <i class="icon-heart text-danger" aria-hidden="true"></i> by
+                <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-    
-
   </div>
   <!-- .site-wrap -->
-
 </body>
 
 {% endblock %}
