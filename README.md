@@ -11,5 +11,20 @@ apparel retail market size is 368 billion in US in 2019. In 2018, retail e-comme
 - `pip3 install -r requirements.txt`
 - `flask run`
 
+# Deployment:
+- `docker build --tag=leelightman/nona .\Hackathon\flask\`
+- `docker run -p 8080 leelightman/nona`
+- `gcloud config set project nona-270513`
+- `gcloud config set compute/zone us-east4`
+-  `export PROJECT_ID=nona-270513`
+- `docker build -t gcr.io/nona-270513/nona:v1 .\Hackathon\flask\`
+- `gcloud auth configure-docker`
+- `docker push gcr.io/nona-270513/nona:v1`
+- `gcloud container clusters create nona-cluster --num-nodes=1`
+- `kubectl create deployment nona-web --image=gcr.io/nona-270513/nona:v1`
+- `kubectl get pods`
+- `kubectl expose deployment nona-web --type=LoadBalancer --port 80 --target-port 8080`
+- `kubectl get service`
+
 # More resources for Flask
 - https://awesomeopensource.com/projects/flask
