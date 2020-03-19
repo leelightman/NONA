@@ -22,4 +22,4 @@ spec:
     - port: 80
       targetPort: 7070
   selector:
-    app: nona-web
+    app: nona

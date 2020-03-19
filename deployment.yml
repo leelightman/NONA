@@ -26,10 +26,10 @@ spec:
   template:
     metadata:
       labels:
-        app: nona-web
+        app: nona
     spec:
       containers:
-      - name: nona-web
+      - name: nona
         image: gcr.io/GKE_PROJECT/IMAGE:TAG
         ports:
         - containerPort: 7070
