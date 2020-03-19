@@ -32,7 +32,7 @@ spec:
       - name: nona-web
         image: gcr.io/GKE_PROJECT/IMAGE:TAG
         ports:
-        - containerPort: 8080
+        - containerPort: 7070
         resources:
           requests:
             cpu: 100m
