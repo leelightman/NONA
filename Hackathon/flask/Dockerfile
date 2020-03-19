@@ -7,19 +7,16 @@ FROM ubuntu:18.04
 
 ENV LANG C.UTF-8
 ENV PORT 8080
+EXPOSE 8080
 
 RUN apt-get update && apt-get install -y && \
     apt install -y git python3 python3-pip python3-venv
 
-RUN  git clone https://github.com/leelightman/NONA.git /home/NONA
+WORKDIR /home/NONA/
 
-WORKDIR /home/NONA/Hackathon/flask/
+COPY ./ ./
 
 RUN pip3 install -r requirements.txt && \
     flask init-db
 
-EXPOSE 8080
-
 CMD flask run -p 8080 --host=0.0.0.0
-
-
